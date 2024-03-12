@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  WeSplit
-//
-//  Created by Rochelle Simone Lawrence on 06.03.24.
-//
-
 import SwiftUI
 
 struct ContentView: View {
@@ -13,23 +6,23 @@ struct ContentView: View {
     @State private var tipPercentage = 20
     @FocusState private var amountIsFocused: Bool
 
-    let tipPercentages = [10, 15, 20, 25, 0]
+    let localCurrency = Locale.current.currency?.identifier ?? "USD"
 
-    var totalPerPerson: Double {
-        let peopleCount = Double(numberOfPeople + 2)
+    var totalAmount: Double {
         let tipSelection = Double(tipPercentage)
-
         let tipValue = checkAmount/100 * tipSelection
         let grandTotal = checkAmount + tipValue
-        let amountPerPerson = grandTotal/peopleCount
-        return amountPerPerson
+        return grandTotal
     }
 
+    var totalPerPerson: Double {
+        totalAmount/Double(numberOfPeople + 2)
+    }
     var body: some View {
         NavigationStack {
             Form {
                 Section {
-                    TextField("Amount", value: $checkAmount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                    TextField("Amount", value: $checkAmount, format: .currency(code: localCurrency ))
                         .keyboardType(.decimalPad)
                         .focused($amountIsFocused)
 
@@ -41,16 +34,22 @@ struct ContentView: View {
                 }
                 Section("How much do you want to tip?") {
                     Picker("Tip percentage", selection: $tipPercentage) {
-                        ForEach(tipPercentages, id: \.self) {
+                        ForEach(0..<101) {
                             Text($0, format: .percent)
                         }
                     }
-                    .pickerStyle(.segmented)
                 }
 
                 Section {
-                    Text(totalPerPerson, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                    Text(totalPerPerson, format: .currency(code: localCurrency))
+                } header: {
+                    Text("Amount per person")
                 }
+
+                Section("Total amount for check") {
+                    Text(totalAmount, format: .currency(code: localCurrency))
+                }
+
             }
             .navigationTitle("WeSplit")
             .toolbar {
