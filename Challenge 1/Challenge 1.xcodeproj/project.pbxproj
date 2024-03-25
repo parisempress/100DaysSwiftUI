@@ -11,6 +11,10 @@
 		EF0FDBC42B9F59B40017DC31 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0FDBC32B9F59B40017DC31 /* ContentView.swift */; };
 		EF0FDBC62B9F59BB0017DC31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF0FDBC52B9F59BB0017DC31 /* Assets.xcassets */; };
 		EF0FDBC92B9F59BB0017DC31 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF0FDBC82B9F59BB0017DC31 /* Preview Assets.xcassets */; };
+		EF84607D2BB1B6D400BEB143 /* Challenge_AlternativeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF84607C2BB1B6D400BEB143 /* Challenge_AlternativeApp.swift */; };
+		EF84607F2BB1B6D400BEB143 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF84607E2BB1B6D400BEB143 /* ContentView.swift */; };
+		EF8460812BB1B6D700BEB143 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF8460802BB1B6D700BEB143 /* Assets.xcassets */; };
+		EF8460842BB1B6D700BEB143 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF8460832BB1B6D700BEB143 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,10 +23,22 @@
 		EF0FDBC32B9F59B40017DC31 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EF0FDBC52B9F59BB0017DC31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF0FDBC82B9F59BB0017DC31 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EF84607A2BB1B6D400BEB143 /* Challenge Alternative.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Challenge Alternative.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF84607C2BB1B6D400BEB143 /* Challenge_AlternativeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge_AlternativeApp.swift; sourceTree = "<group>"; };
+		EF84607E2BB1B6D400BEB143 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EF8460802BB1B6D700BEB143 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EF8460832BB1B6D700BEB143 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		EF0FDBBB2B9F59B40017DC31 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF8460772BB1B6D400BEB143 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -36,6 +52,7 @@
 			isa = PBXGroup;
 			children = (
 				EF0FDBC02B9F59B40017DC31 /* Challenge 1 */,
+				EF84607B2BB1B6D400BEB143 /* Challenge Alternative */,
 				EF0FDBBF2B9F59B40017DC31 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -44,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				EF0FDBBE2B9F59B40017DC31 /* Challenge 1.app */,
+				EF84607A2BB1B6D400BEB143 /* Challenge Alternative.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -63,6 +81,25 @@
 			isa = PBXGroup;
 			children = (
 				EF0FDBC82B9F59BB0017DC31 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EF84607B2BB1B6D400BEB143 /* Challenge Alternative */ = {
+			isa = PBXGroup;
+			children = (
+				EF84607C2BB1B6D400BEB143 /* Challenge_AlternativeApp.swift */,
+				EF84607E2BB1B6D400BEB143 /* ContentView.swift */,
+				EF8460802BB1B6D700BEB143 /* Assets.xcassets */,
+				EF8460822BB1B6D700BEB143 /* Preview Content */,
+			);
+			path = "Challenge Alternative";
+			sourceTree = "<group>";
+		};
+		EF8460822BB1B6D700BEB143 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				EF8460832BB1B6D700BEB143 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -87,6 +124,23 @@
 			productReference = EF0FDBBE2B9F59B40017DC31 /* Challenge 1.app */;
 			productType = "com.apple.product-type.application";
 		};
+		EF8460792BB1B6D400BEB143 /* Challenge Alternative */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF8460852BB1B6D700BEB143 /* Build configuration list for PBXNativeTarget "Challenge Alternative" */;
+			buildPhases = (
+				EF8460762BB1B6D400BEB143 /* Sources */,
+				EF8460772BB1B6D400BEB143 /* Frameworks */,
+				EF8460782BB1B6D400BEB143 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Challenge Alternative";
+			productName = "Challenge Alternative";
+			productReference = EF84607A2BB1B6D400BEB143 /* Challenge Alternative.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -98,6 +152,9 @@
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					EF0FDBBD2B9F59B40017DC31 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					EF8460792BB1B6D400BEB143 = {
 						CreatedOnToolsVersion = 15.2;
 					};
 				};
@@ -116,6 +173,7 @@
 			projectRoot = "";
 			targets = (
 				EF0FDBBD2B9F59B40017DC31 /* Challenge 1 */,
+				EF8460792BB1B6D400BEB143 /* Challenge Alternative */,
 			);
 		};
 /* End PBXProject section */
@@ -130,6 +188,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EF8460782BB1B6D400BEB143 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF8460842BB1B6D700BEB143 /* Preview Assets.xcassets in Resources */,
+				EF8460812BB1B6D700BEB143 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -139,6 +206,15 @@
 			files = (
 				EF0FDBC42B9F59B40017DC31 /* ContentView.swift in Sources */,
 				EF0FDBC22B9F59B40017DC31 /* Challenge_1App.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF8460762BB1B6D400BEB143 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF84607F2BB1B6D400BEB143 /* ContentView.swift in Sources */,
+				EF84607D2BB1B6D400BEB143 /* Challenge_AlternativeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +398,64 @@
 			};
 			name = Release;
 		};
+		EF8460862BB1B6D700BEB143 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Challenge Alternative/Preview Content\"";
+				DEVELOPMENT_TEAM = M9V49Y5974;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "practice.Challenge-Alternative";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EF8460872BB1B6D700BEB143 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Challenge Alternative/Preview Content\"";
+				DEVELOPMENT_TEAM = M9V49Y5974;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "practice.Challenge-Alternative";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -339,6 +473,15 @@
 			buildConfigurations = (
 				EF0FDBCD2B9F59BB0017DC31 /* Debug */,
 				EF0FDBCE2B9F59BB0017DC31 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF8460852BB1B6D700BEB143 /* Build configuration list for PBXNativeTarget "Challenge Alternative" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF8460862BB1B6D700BEB143 /* Debug */,
+				EF8460872BB1B6D700BEB143 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
