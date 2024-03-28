@@ -1,11 +1,15 @@
 import SwiftUI
 
 struct ContentView: View {
-  @State private  var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Poland", "Spain", "UK", "Ukraine", "US"].shuffled()
+    static let allCountries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Poland", "Spain", "UK", "Ukraine", "US"]
+    @State private var countries = allCountries.shuffled()
     @State private   var correctAnswer = Int.random(in: 0...2)
-
     @State private var showingScore = false
     @State private var scoreTitle = ""
+    @State private var usersScore = 0
+    @State private var finalScore = false
+    @State private var counter = 1
+    
     var body: some View {
         ZStack {
             RadialGradient(stops:[.init(color: Color(red:0.1, green: 0.2, blue:0.45), location:0.3),
@@ -17,7 +21,7 @@ struct ContentView: View {
                 Text("Guess the Flag")
                     .font(.largeTitle.bold())
                     .foregroundStyle(.white)
-
+                
                 VStack(spacing: 15) {
                     VStack {
                         Text("Tap the flag of")
@@ -34,9 +38,9 @@ struct ContentView: View {
                                 .clipShape(.capsule)
                                 .shadow(radius: 5)
                         }
-
+                        
                     }
-
+                    
                 }
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 20)
@@ -44,9 +48,9 @@ struct ContentView: View {
                 .clipShape(.rect(cornerRadius: 20))
                 Spacer()
                 Spacer()
-
-                Text("Score: ???")
-
+                
+                Text("Score: \(usersScore)")
+                
                 Spacer()
             }
             .padding()
@@ -54,24 +58,48 @@ struct ContentView: View {
         .alert(scoreTitle, isPresented: $showingScore) {
             Button("Continue", action: askQuestion)
         } message: {
-            Text("Your score is ???")
+            Text("Your score is \(usersScore)")
+        }
+        .alert("Final Score", isPresented: $finalScore){
+            Button("Restart Game", action: restartGame)
+        } message: {
+            Text("Your final score was \(usersScore)")
         }
     }
+    
     func flagTapped(_ number: Int) {
         if number == correctAnswer {
-          scoreTitle = "Correct"
+            usersScore += 1
+            scoreTitle = "Correct"
         } else {
-            scoreTitle = "Wrong"
+            scoreTitle = "Wrong!Thats the flag of \(countries[number]) "
+            if usersScore > 0 {
+                usersScore -= 1
+            }
         }
-        showingScore = true
+        if counter == 8 {
+            finalScore = true
+        } else {
+            showingScore = true
+        }
     }
-
+    
+    func restartGame() {
+        counter = 0
+        usersScore = 0
+        countries = Self.allCountries
+        askQuestion()
+        
+    }
+    
     func askQuestion() {
+        countries.remove(at: correctAnswer)
         countries.shuffle()
         correctAnswer = Int.random(in: 0...2)
+        counter += 1
     }
 }
 
-    #Preview {
-        ContentView()
-    }
+#Preview {
+    ContentView()
+}
