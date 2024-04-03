@@ -48,8 +48,8 @@ struct ContentView: View {
 
                 Section("Total amount for check") {
                     Text(totalAmount, format: .currency(code: localCurrency))
+                        .foregroundStyle(tipPercentage == 0 ? .red : .primary)
                 }
-
             }
             .navigationTitle("WeSplit")
             .toolbar {
