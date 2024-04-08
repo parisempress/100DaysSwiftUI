@@ -37,7 +37,7 @@ struct ContentView: View {
             HStack {
                 ForEach(0..<3) { number in
                     Button(moves[number]) {
-
+                        play(choice: number)
                     }
                     .font(.system(size: 80))
                 }
@@ -80,7 +80,7 @@ struct ContentView: View {
 
         }
     }
-    
+
     func reset() {
         computerChoice = Int.random(in: 0..<3)
         shouldWin = Bool.random()
