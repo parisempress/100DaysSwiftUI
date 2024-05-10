@@ -129,10 +129,6 @@ wordError(title: "Nice try...", message: "You can't use your starting word")
         errorMessage = message
         showingError = true
     }
-
-    func calcScore () -> Int {
-        return usedWords.count
-    }
 }
 
 #Preview {

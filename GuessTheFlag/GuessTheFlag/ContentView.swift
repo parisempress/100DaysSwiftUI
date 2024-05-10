@@ -9,6 +9,7 @@ struct ContentView: View {
     @State private var usersScore = 0
     @State private var finalScore = false
     @State private var counter = 1
+    @State private var  selectedFlag = -1
 
     var body: some View {
         ZStack {
@@ -36,6 +37,14 @@ struct ContentView: View {
                         } label: {
                             FlagImage(name: countries[number])
                         }
+                        .rotation3DEffect(
+                            .degrees(selectedFlag == number ? 360 : 0), axis: (x:0, y:1, z:0)
+                        )
+                        .opacity(selectedFlag == -1 || selectedFlag == number ? 1 : 0.25)
+                        .scaleEffect(selectedFlag == -1 || selectedFlag == number ? 1: 0.25)
+                        .saturation(selectedFlag == -1 || selectedFlag == number ? 1: 0)
+                        .blur(radius: selectedFlag == -1 || selectedFlag == number ? 0: 3)
+                        .animation(.default,value: selectedFlag)
                     }
                 }
                 .frame(maxWidth: .infinity)
@@ -72,6 +81,9 @@ struct ContentView: View {
                 usersScore -= 1
             }
         }
+
+        selectedFlag = number
+
         if counter == 8 {
             finalScore = true
         } else {
@@ -92,6 +104,7 @@ struct ContentView: View {
         countries.shuffle()
         correctAnswer = Int.random(in: 0...2)
         counter += 1
+        selectedFlag = -1
     }
 }
 
