@@ -1,10 +1,14 @@
 import SwiftUI
 
+struct Question {
+    let text: String
+    let answer: Int
+}
+
 struct ContentView: View {
     @State private var multiplicationTable = 2
     @State private var numberOfQuestions = 5
-    @State private var questions: [String] = []
-    @State private var answers: [Int] = []
+    @State private var questions:[Question] = []
 
     var body: some View {
         NavigationView {
@@ -27,7 +31,8 @@ struct ContentView: View {
                 Text("Number of questions is \(numberOfQuestions)")
                     .padding()
 
-                NavigationLink(destination: QuizView(questions: questions, answers: answers)) {
+                NavigationLink(destination:
+                QuizView(questions: questions)) {
                     Text("Submit")
                         .padding()
                         .background(Color.blue)
@@ -44,78 +49,16 @@ struct ContentView: View {
     }
 
     func generateQuestionsAndAnswers() {
-        questions = (1...numberOfQuestions).map { "What is \(multiplicationTable) x \($0)?" }
-        answers = (1...numberOfQuestions).map { multiplicationTable * $0 }
+        questions.removeAll()
+        for i in 1...numberOfQuestions {
+            let first = multiplicationTable
+            let second = Int.random(in: 1...multiplicationTable)
+            let question = Question(text:"Multiply \(first) x \(second)", answer: first * second)
+            questions.append(question)
+        }
     }
 }
 
-struct QuizView: View {
-    var questions: [String]
-    var answers: [Int]
-    @State private var userAnswers: [String] = []
-    @State private var score = 0
-    @State private var showScore = false
-
-    var body: some View {
-        VStack {
-            List {
-                ForEach(0..<questions.count, id: \.self) { index in
-                    VStack(alignment: .leading) {
-                        Text(questions[index])
-                        TextField("Your answer", text: Binding(
-                            get: {
-                                if userAnswers.indices.contains(index) {
-                                    return userAnswers[index]
-                                } else {
-                                    return ""
-                                }
-                            },
-                            set: { newValue in
-                                if userAnswers.indices.contains(index) {
-                                    userAnswers[index] = newValue
-                                } else {
-                                    userAnswers.append(newValue)
-                                }
-                            }
-                        ))
-                        .keyboardType(.numberPad)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding(.bottom)
-                    }
-                }
-            }
-
-            Button(action: checkAnswers) {
-                Text("Check Answers")
-                    .padding()
-                    .background(Color.green)
-                    .foregroundColor(.white)
-                    .cornerRadius(8)
-            }
-            .padding()
-
-            if showScore {
-                Text("Score: \(score) / \(questions.count)")
-                    .font(.title)
-                    .padding()
-            }
-
-            Spacer()
-        }
-        .padding()
-        .navigationTitle("Quiz")
-    }
-
-    func checkAnswers() {
-        score = 0
-        for i in 0..<answers.count {
-            if i < userAnswers.count, let userAnswer = Int(userAnswers[i]), userAnswer == answers[i] {
-                score += 1
-            }
-        }
-        showScore = true
-    }
-}
 
 #Preview {
     ContentView()
