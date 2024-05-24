@@ -46,11 +46,15 @@ struct QuizView: View {
             .padding()
 
             if showScore {
-                Text("Score: \(score) / \(questions.count)")
-                    .font(.title)
-                    .padding()
+                VStack {
+                    let scorePercentage = (score/questions.count) * 100
+                    scorePercentage >= 80 ? Text("Keep up the good work😊!") :
+                    Text("Continue to Practice😞")
+                    Text("Score: \(score) / \(questions.count)")
+                        .font(.title)
+                        .padding()
+                }
             }
-
             Spacer()
         }
         .padding()
