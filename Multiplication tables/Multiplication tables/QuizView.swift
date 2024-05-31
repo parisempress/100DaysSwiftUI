@@ -57,8 +57,7 @@ struct QuizView: View {
             }
             Spacer()
         }
-        .padding()
-        .navigationTitle("Quiz")
+        
     }
 
     func checkAnswers() {
