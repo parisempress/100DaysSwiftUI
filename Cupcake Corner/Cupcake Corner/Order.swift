@@ -32,16 +32,33 @@ class Order: Codable {
             }
         }
     }
+
     var extraFrosting = false
     var addSprinkles = false
     
-    var name = ""
-    var streetAddress = ""
-    var city = ""
-    var zip = ""
+    var name: String {
+        didSet {
+            UserDefaults.standard.set(name, forKey: "streetAddress")
+        }
+    }
+    var streetAddress : String {
+        didSet {
+            UserDefaults.standard.set(streetAddress, forKey: "streetAddress")
+        }
+    }
+    var city : String {
+        didSet {
+            UserDefaults.standard.set(city, forKey: "streetAddress")
+        }
+    }
+    var zip: String {
+        didSet {
+            UserDefaults.standard.set(city, forKey: "streetAddress")
+        }
+    }
 
     var hasValidAddress: Bool {
-        if name.isEmpty || streetAddress.isEmpty || city.isEmpty || zip.isEmpty {
+        if name.isReallyEmpty || streetAddress.isReallyEmpty || city.isReallyEmpty || zip.isReallyEmpty {
             return false
         }
         return true
@@ -54,7 +71,7 @@ class Order: Codable {
         // complicated cakes cost more
         cost += Decimal(type)/2
 
-        // $1/ cake for extra frosting
+        // $1 cake for extra frosting
         if extraFrosting {
             cost += Decimal(quantity)
         }
@@ -64,5 +81,12 @@ class Order: Codable {
             cost += Decimal(quantity)/2
         }
         return cost
+    }
+
+    init() {
+        name = UserDefaults.standard.string(forKey: "name") ?? ""
+        streetAddress = UserDefaults.standard.string(forKey: "streetAddress") ?? ""
+        city = UserDefaults.standard.string(forKey: "city") ?? ""
+        zip = UserDefaults.standard.string(forKey: "zip") ?? ""
     }
 }

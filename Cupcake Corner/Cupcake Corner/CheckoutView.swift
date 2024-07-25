@@ -11,7 +11,9 @@ struct CheckoutView: View {
     var order: Order
 
     @State private var confirmationMessage = ""
+    @State private var errorMessage = ""
     @State private var showingConfirmation = false
+    @State private var  serverConnection = false
 
     var body: some View {
         ScrollView {
@@ -40,6 +42,11 @@ struct CheckoutView: View {
         .alert("Thank you!", isPresented: $showingConfirmation) {
             Button("Ok") { }
         } message: {
+            Text(errorMessage)
+        }
+        .alert("ConnectionIssues", isPresented: $serverConnection) {
+            Button("Ok") { }
+        } message: {
             Text(confirmationMessage)
         }
     }
@@ -60,7 +67,8 @@ struct CheckoutView: View {
             confirmationMessage = "Your order for \(decodedOrder.quantity)x \(Order.types[decodedOrder.type].lowercased()) cupcakes is on the the way"
             showingConfirmation = true
         } catch {
-            print("Check out failed: \(error.localizedDescription)")
+            errorMessage = "Sorry Check out failed. \n\nMessage: \(error.localizedDescription)"
+            serverConnection = true
         }
     }
 }
