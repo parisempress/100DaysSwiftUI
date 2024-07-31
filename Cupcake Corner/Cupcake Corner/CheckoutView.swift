@@ -13,7 +13,7 @@ struct CheckoutView: View {
     @State private var confirmationMessage = ""
     @State private var errorMessage = ""
     @State private var showingConfirmation = false
-    @State private var  serverConnection = false
+    @State private var serverConnection = false
 
     var body: some View {
         ScrollView {
