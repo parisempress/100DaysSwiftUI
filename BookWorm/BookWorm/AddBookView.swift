@@ -17,12 +17,7 @@ struct AddBookView: View {
             Section {
                 TextField("Name of book", text: $title)
                 TextField("Author's name", text: $author)
-
-                Picker("Genre", selection: $genre) {
-                    ForEach(genres, id: \.self) {
-                        Text($0)
-                    }
-                }
+                RatingView(rating: $rating)
             }
 
             Section("Write a review") {
