@@ -12,7 +12,7 @@
 		EF9C2CF12C066A07006A3826 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF9C2CF02C066A07006A3826 /* Assets.xcassets */; };
 		EF9C2CF42C066A07006A3826 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF9C2CF32C066A07006A3826 /* Preview Assets.xcassets */; };
 		EF9C2CFB2C09D326006A3826 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9C2CFA2C09D326006A3826 /* AddView.swift */; };
-		EF9C2CFD2C0FE432006A3826 /* Expense Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9C2CFC2C0FE432006A3826 /* Expense Section.swift */; };
+		EF9C2CFD2C0FE432006A3826 /* ExpensesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9C2CFC2C0FE432006A3826 /* ExpensesList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,7 +22,7 @@
 		EF9C2CF02C066A07006A3826 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF9C2CF32C066A07006A3826 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EF9C2CFA2C09D326006A3826 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
-		EF9C2CFC2C0FE432006A3826 /* Expense Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Expense Section.swift"; sourceTree = "<group>"; };
+		EF9C2CFC2C0FE432006A3826 /* ExpensesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +55,7 @@
 		EF9C2CEB2C0669FD006A3826 /* iExpense */ = {
 			isa = PBXGroup;
 			children = (
-				EF9C2CFC2C0FE432006A3826 /* Expense Section.swift */,
+				EF9C2CFC2C0FE432006A3826 /* ExpensesList.swift */,
 				EF9C2CEC2C0669FD006A3826 /* iExpenseApp.swift */,
 				EF9C2CEE2C0669FD006A3826 /* ContentView.swift */,
 				EF9C2CFA2C09D326006A3826 /* AddView.swift */,
@@ -144,7 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF9C2CEF2C0669FD006A3826 /* ContentView.swift in Sources */,
-				EF9C2CFD2C0FE432006A3826 /* Expense Section.swift in Sources */,
+				EF9C2CFD2C0FE432006A3826 /* ExpensesList.swift in Sources */,
 				EF9C2CED2C0669FD006A3826 /* iExpenseApp.swift in Sources */,
 				EF9C2CFB2C09D326006A3826 /* AddView.swift in Sources */,
 			);
